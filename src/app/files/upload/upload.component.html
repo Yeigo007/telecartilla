@@ -1,0 +1,75 @@
+
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+      <input id="selec" class="input-group"  type="file" accept="image/*" (change)="seleccionarArchivo($event)">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <input class="input-group" type="text" [(ngModel)]="archivo.formato" name="formato1">
+        <label>Su Archivo Tiene el Siguiente Formato:</label>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <label id="example-radio-group-label">Seleccione Caracter para Dividir Archivo</label>
+      <mat-radio-group aria-labelledby="example-radio-group-label"    class="example-radio-group" [(ngModel)]="favoriteSeason">
+        <mat-radio-button class="example-radio-button"  *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div>Otro Caracter:</div>
+        <div class="form-group">
+          <input class="input-group" type="text" [(ngModel)]="archivo.texto" id="info" name="info">
+        </div>
+
+    </div>
+  </div>
+  <div class="form-group">
+  <button class="btn-primary" (click)="preVisualizacion()"> Previsualización</button>
+  </div>
+</div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="idcampania">
+      <th mat-header-cell *matHeaderCellDef> idcampania </th>
+      <td mat-cell *matCellDef="let element"> {{element.idcampania}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombres">
+      <th mat-header-cell *matHeaderCellDef> nombres </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombres}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="apellidos">
+      <th mat-header-cell *matHeaderCellDef> apellidos </th>
+      <td mat-cell *matCellDef="let element"> {{element.apellidos}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="telefono">
+      <th mat-header-cell *matHeaderCellDef> telefono </th>
+      <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="direccion">
+      <th mat-header-cell *matHeaderCellDef> direccion </th>
+      <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+<br>
+  <button class="btn-success btn-ancho" (click)="upload()"> SUBIR ARCHIVO </button>
+

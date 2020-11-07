@@ -1,0 +1,49 @@
+
+<h1>Buenas Practicas del Agilismo</h1>
+<table mat-table [dataSource]="dataSource" >
+
+
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="idpractica">
+    <th mat-header-cell *matHeaderCellDef> idpractica </th>
+    <td mat-cell *matCellDef="let element"> {{element.idpractica}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="fecha">
+    <th mat-header-cell *matHeaderCellDef> fecha </th>
+    <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="autor">
+    <th mat-header-cell *matHeaderCellDef> autor </th>
+    <td mat-cell *matCellDef="let element"> {{element.autor}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="descripcion">
+    <th mat-header-cell *matHeaderCellDef> descripcion </th>
+    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+  </ng-container>
+  <ng-container matColumnDef="observaciones">
+    <th mat-header-cell *matHeaderCellDef> observaciones </th>
+    <td mat-cell *matCellDef="let element"> {{element.observaciones}} </td>
+  </ng-container>
+  <ng-container matColumnDef="vigencia">
+    <th mat-header-cell *matHeaderCellDef> vigencia </th>
+    <td mat-cell *matCellDef="let element"> {{element.vigencia}} </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+}
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  border-color: #00aced;
+  color-rendering:auto;
+  color: #1b1e21;
+}
+
+.example-radio-button {
+  margin: 5px;
+  border-color: #00aced;
+  color: #00aced;
+  solid-color: #00aeef;
+}
+
